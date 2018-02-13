@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/home/astroflux/Bureau/AstroFlux/armoire/ffmpeg.static.64bit.2013-06-01/ffmpeg -i rtsp://root:labomediastrolabe@192.168.2.69/axis-media/media.amp -pix_fmt yuv420p -an -r 25 -f v4l2 /dev/video4
+

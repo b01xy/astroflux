@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/home/astroflux/Bureau/AstroFlux/armoire/bmdtools/bmdcapture -C 0 -m 2 -A 2 -V 4 -F nut -f pipe:1 | /home/astroflux/Bureau/AstroFlux/armoire/ffmpeg.static.64bit.2013-06-01/ffmpeg -y -i - -f v4l2 /dev/video2
+

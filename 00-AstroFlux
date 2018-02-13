@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Cameras composites "GoPro"
+v4l2-ctl -s pal -d /dev/video0
+v4l2-ctl -s pal -d /dev/video1
+
+# Flux SDI "Fond de scène" /dev/video2
+xterm -e "/home/astroflux/Bureau/AstroFlux/armoire/bmdtools/bmdcapture-2" &
+
+# Flux SDI // ou MiniCaster /dev/video3
+xterm -e "/home/astroflux/Bureau/AstroFlux/armoire/bmdtools/bmdcapture-3" &
+
+# Camera surveillance /dev/video4
+xterm -e "/home/astroflux/Bureau/AstroFlux/armoire/axiscapture-4" &
+
+qjackctl &
+sleep 5
+cd /home/astroflux/Bureau/AstroFlux/
+pd -nomidi -jack 02-AstroFlux-Son.pd &
+sleep 5
+pd -noaudio -mididev 1 -alsamidi 01-AstroFlux-Interface.pd

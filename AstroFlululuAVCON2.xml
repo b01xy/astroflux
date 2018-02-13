@@ -1,0 +1,68 @@
+<!DOCTYPE patchbay>
+<patchbay version="0.3.12" name="AstroFlululuAVCON2">
+ <output-sockets>
+  <socket exclusive="off" client="system" type="jack-audio" name="system">
+   <plug>capture_1</plug>
+   <plug>capture_2</plug>
+  </socket>
+  <socket exclusive="off" client="pure_data_0" type="jack-audio" name="pure_data_0">
+   <plug>output0</plug>
+   <plug>output1</plug>
+  </socket>
+  <socket exclusive="off" client="Midi Through" type="alsa-midi" name="Midi Through">
+   <plug>Midi Through Port-0</plug>
+  </socket>
+  <socket exclusive="off" client="Alias_8" type="alsa-midi" name="Alias_8">
+   <plug>Alias_8 MIDI 1</plug>
+   <plug>Alias_8 MIDI 2</plug>
+  </socket>
+  <socket exclusive="off" client="Pure Data" type="alsa-midi" name="Pure Data">
+   <plug>Pure Data Midi-Out 1</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket exclusive="off" client="pure_data_0" type="jack-audio" name="pure_data_0">
+   <plug>input0</plug>
+   <plug>input1</plug>
+  </socket>
+  <socket exclusive="off" client="sound" type="jack-audio" name="sound">
+   <plug>input_1</plug>
+   <plug>input_2</plug>
+  </socket>
+  <socket exclusive="off" client="sound-01" type="jack-audio" name="sound-01">
+   <plug>input_1</plug>
+   <plug>input_2</plug>
+  </socket>
+  <socket exclusive="off" client="sound-02" type="jack-audio" name="sound-02">
+   <plug>input_1</plug>
+   <plug>input_2</plug>
+  </socket>
+  <socket exclusive="off" client="sound-03" type="jack-audio" name="sound-03">
+   <plug>input_1</plug>
+   <plug>input_2</plug>
+  </socket>
+  <socket exclusive="off" client="Midi Through" type="alsa-midi" name="Midi Through">
+   <plug>Midi Through Port-0</plug>
+  </socket>
+  <socket exclusive="off" client="Alias_8" type="alsa-midi" name="Alias_8">
+   <plug>Alias_8 MIDI 1</plug>
+   <plug>Alias_8 MIDI 2</plug>
+  </socket>
+  <socket exclusive="off" client="Pure Data" type="alsa-midi" name="Pure Data">
+   <plug>Pure Data Midi-In 1</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable output="system" input="pure_data_0" type="jack-audio"/>
+  <cable output="pure_data_0" input="sound-01" type="jack-audio"/>
+  <cable output="pure_data_0" input="sound-02" type="jack-audio"/>
+  <cable output="pure_data_0" input="sound-03" type="jack-audio"/>
+  <cable output="pure_data_0" input="sound" type="jack-audio"/>
+  <cable output="Midi Through" input="Pure Data" type="alsa-midi"/>
+  <cable output="Alias_8" input="Pure Data" type="alsa-midi"/>
+  <cable output="Pure Data" input="Midi Through" type="alsa-midi"/>
+  <cable output="Pure Data" input="Alias_8" type="alsa-midi"/>
+ </cables>
+</patchbay>
+
